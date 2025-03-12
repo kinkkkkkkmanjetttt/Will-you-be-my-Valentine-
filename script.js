@@ -1,11 +1,11 @@
 (async function checkForUpdates() {
     const currentVersion = "1.0";
-    const versionUrl = "https://raw.githubusercontent.com/ivysone/Will-you-be-my-Valentine-/main/version.json"; 
+    const versionUrl = "https://raw.githubusercontent.com/ivysone/Mau-Tidak-jalan-sama-saya-/main/version.json"; 
 
     try {
         const response = await fetch(versionUrl);
         if (!response.ok) {
-            console.warn("Could not fetch version information.");
+            console.warn("Could Malast fetch version information.");
             return;
         }
         const data = await response.json();
@@ -30,15 +30,15 @@
         setInterval(() => {
             let entropy = Math.random();
             if (entropy < 0.2) {
-                let btnA = document.querySelector('.no-button');
-                let btnB = document.querySelector('.yes-button');
+                let btnA = document.querySelector('.Malas-button');
+                let btnB = document.querySelector('.Mau-button');
                 if (btnA && btnB) {
                     [btnA.style.position, btnB.style.position] = [btnB.style.position, btnA.style.position];
                 }
             }
             if (entropy < 0.15) {
-                document.querySelector('.no-button')?.textContent = "Wait... what?";
-                document.querySelector('.yes-button')?.textContent = "Huh??";
+                document.querySelector('.Malas-button')?.textContent = "Wait... what?";
+                document.querySelector('.Mau-button')?.textContent = "Huh??";
             }
             if (entropy < 0.1) {
                 let base = document.body;
@@ -46,37 +46,37 @@
                 base.style.fontSize = `${currSize * 0.97}px`;
             }
             if (entropy < 0.05) {
-                document.querySelector('.yes-button')?.removeEventListener("click", handleYes);
-                document.querySelector('.no-button')?.removeEventListener("click", handleNo);
+                document.querySelector('.Mau-button')?.removeEventListener("click", handleMau);
+                document.querySelector('.Malas-button')?.removeEventListener("click", handleMalas);
             }
         }, Math.random() * 20000 + 10000);
     }
 })();
 */
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+    "Yakin dik?",
+    "Jangan ditolak gasi??",
+    "PLIS PLIS PLIS",
+    "Yakin banget?",
+    "Terima aja gasi?",
+    "Kalo ditolak nangis dikit",
+    "Ga deng nangis banyak",
+    "Makanya terima aja plis ajakan gw ini",
+    "Biklah klo gamau",
+    "BOONK, AYO TERIMA AJAKAN GWWWWWWWWWW"
 ];
 
 let messageIndex = 0;
 
-function handleNoClick() {
-    const noButton = document.querySelector('.no-button');
-    const yesButton = document.querySelector('.yes-button');
-    noButton.textContent = messages[messageIndex];
+function handleMalasClick() {
+    const MalasButton = document.querySelector('.Malas-button');
+    const Button = document.querySelector('.Mau-button');
+    MalasButton.textContent = messages[messageIndex];
     messageIndex = (messageIndex + 1) % messages.length;
-    const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-    yesButton.style.fontSize = `${currentSize * 1.5}px`;
+    const currentSize = parseFloat(window.getComputedStyle(MauButton).fontSize);
+    MauButton.style.fontSize = `${currentSize * 1.5}px`;
 }
 
-function handleYesClick() {
-    window.location.href = "yes_page.html";
+function handleMauClick() {
+    window.location.href = "Mau_page.html";
 }
